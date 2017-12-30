@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holdings", "src\Holdings\Holdings.csproj", "{4C84BBC3-667D-42FC-8BEF-187CECDC4447}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holdings.Data", "src\Holdings.Data\Holdings.Data.csproj", "{F040C382-9B45-46A3-B5D1-814877773E66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holdings.Domain", "src\Holdings.Domain\Holdings.Domain.csproj", "{F040C382-9B45-46A3-B5D1-814877773E66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
