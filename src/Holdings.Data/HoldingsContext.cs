@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Holdings.Data
 {
-    class HoldingsContext : DbContext
+    public class HoldingsContext : DbContext
     {
         public HoldingsContext(DbContextOptions<HoldingsContext> options)
             : base(options)
@@ -11,8 +11,10 @@ namespace Holdings.Data
         }
 
         public DbSet<Balance> Balances { get; set; }
+        public DbSet<Deposit> Deposits { get; set; }
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Token> Tokens { get; set; }
         public DbSet<Trade> Trades { get; set; }
+        public DbSet<Withdrawal> Withdrawals { get; set; }
     }
 }
