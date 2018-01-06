@@ -7,4 +7,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Holdings.Data\Holdings.Data.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Deposits\" />
+    <Folder Include="Deposits\Commands\" />
+    <Folder Include="Deposits\CommandHandlers\" />
+    <Folder Include="Commands\" />
+  </ItemGroup>
 </Project>
