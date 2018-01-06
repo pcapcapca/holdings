@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiClients\Holdings.ApiClients.Binance\Holdings.ApiClients.Binance.csproj" />
     <ProjectReference Include="..\Holdings.Data\Holdings.Data.csproj" />
   </ItemGroup>
   <ItemGroup>
