@@ -1,6 +1,9 @@
 # Autosave files
 *~
 
+# appsettings
+appsettings.json
+
 # vs stuff
 .vs/
 
