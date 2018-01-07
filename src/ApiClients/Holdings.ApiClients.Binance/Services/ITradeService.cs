@@ -6,7 +6,6 @@ namespace Holdings.ApiClients.Binance.Services
 {
     public interface ITradeService
     {
-
         Task<IEnumerable<Trade>> GetTradesAsync();
     }
 }

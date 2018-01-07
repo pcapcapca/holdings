@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Binance;
 using Binance.Api;
 
 namespace Holdings.ApiClients.Binance.Services.Implementation
@@ -13,6 +16,11 @@ namespace Holdings.ApiClients.Binance.Services.Implementation
                 throw new ArgumentNullException(nameof(api));
 
             this.api = api;
+        }
+
+        public Task<IEnumerable<Trade>> GetTradesAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

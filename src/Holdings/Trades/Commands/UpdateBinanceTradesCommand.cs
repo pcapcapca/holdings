@@ -2,9 +2,9 @@
 
 namespace Holdings.Trades.Commands
 {
-    public class UpdateExchangeTradesCommand
+    public class UpdateBinanceTradesCommand
     {
-        public UpdateExchangeTradesCommand()
+        public UpdateBinanceTradesCommand()
         {
         }
     }
