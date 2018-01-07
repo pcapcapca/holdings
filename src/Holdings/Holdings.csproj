@@ -13,5 +13,8 @@
     <Folder Include="Deposits\Commands\" />
     <Folder Include="Deposits\CommandHandlers\" />
     <Folder Include="Commands\" />
+    <Folder Include="Trades\" />
+    <Folder Include="Trades\CommandHandlers\" />
+    <Folder Include="Trades\Commands\" />
   </ItemGroup>
 </Project>

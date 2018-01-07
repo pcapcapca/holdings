@@ -2,11 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holdings", "src\Holdings\Holdings.csproj", "{4C84BBC3-667D-42FC-8BEF-187CECDC4447}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holdings", "src\Holdings\Holdings.csproj", "{4C84BBC3-667D-42FC-8BEF-187CECDC4447}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holdings.Data", "src\Holdings.Data\Holdings.Data.csproj", "{F040C382-9B45-46A3-B5D1-814877773E66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holdings.Data", "src\Holdings.Data\Holdings.Data.csproj", "{F040C382-9B45-46A3-B5D1-814877773E66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holdings.CLI", "src\Holdings.CLI\Holdings.CLI.csproj", "{04FE627C-E8CC-4DD4-8796-D0002C0B5B35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holdings.CLI", "src\Holdings.CLI\Holdings.CLI.csproj", "{04FE627C-E8CC-4DD4-8796-D0002C0B5B35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiClients", "ApiClients", "{DA27DE5B-E4CE-4F03-8B68-A05F32DDA8E0}"
 EndProject

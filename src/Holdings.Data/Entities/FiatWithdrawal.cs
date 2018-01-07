@@ -11,6 +11,6 @@ namespace Holdings.Data.Entities
         public decimal Value { get; set; }
 
         public virtual Exchange Exchange { get; set; }
-        public virtual Token Token { get; set; }
+        public virtual Asset Token { get; set; }
     }
 }

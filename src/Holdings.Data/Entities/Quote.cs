@@ -5,12 +5,12 @@ namespace Holdings.Data.Entities
     public class Quote
     {
         public int Id { get; set; }
-        public int TokenFromId { get; set; }
-        public int TokenToId { get; set; }
+        public int BaseAssetId { get; set; }
+        public int QuoteAssetId { get; set; }
         public decimal Price { get; set; }
         public DateTime Timestamp { get; set; }
 
-        public virtual Token TokenFrom { get; set; }
-        public virtual Token TokenTo { get; set; }
+        public virtual Asset BaseAsset { get; set; }
+        public virtual Asset QuoteAsset { get; set; }
     }
 }

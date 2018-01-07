@@ -8,4 +8,8 @@
     <PackageReference Include="Binance" Version="0.1.17" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementation\" />
+  </ItemGroup>
 </Project>
