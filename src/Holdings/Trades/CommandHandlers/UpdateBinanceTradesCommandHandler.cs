@@ -6,6 +6,7 @@ using Holdings.ApiClients.Binance.Services;
 
 namespace Holdings.Trades.CommandHandlers
 {
+    /*
     public class UpdateBinanceTradesCommandHandler : ICommandHandler<UpdateBinanceTradesCommand>
     {
         private readonly HoldingsContext context;
@@ -27,4 +28,5 @@ namespace Holdings.Trades.CommandHandlers
             throw new NotImplementedException();
         }
     }
+    */
 }
