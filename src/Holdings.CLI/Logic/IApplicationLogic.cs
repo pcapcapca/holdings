@@ -2,7 +2,7 @@
 
 namespace Holdings.CLI.Logic
 {
-    interface IApplicationLogic<TOptions>
+    public interface IApplicationLogic<TOptions>
     {
         Task<int> Run(TOptions options);
     }

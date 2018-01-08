@@ -10,6 +10,7 @@ namespace Holdings.CLI.Configuration
             return new Container(config =>
             {
                 config.AddRegistry<CLIRegistry>();
+                config.AddRegistry<HoldingsRegistry>();
                 config.AddRegistry<BinanceApiRegistry>();
             });
         }

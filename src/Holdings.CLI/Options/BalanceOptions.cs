@@ -4,12 +4,12 @@ namespace Holdings.CLI.Options
 {
 
     [Verb("balance", HelpText = "Execute commands and queries associated with balances.")]
-    class BalanceOptions
+    public class BalanceOptions
     {
-        [Option('s', "summary",
-                HelpText = "Display a summary of your balances.",
+        [Option('l', "list",
+                HelpText = "Display latest balances from a store (or all stores).",
                 SetName = nameof(BalanceOptions))]
-        public bool Summary { get; set; }
+        public string ListStore { get; set; }
 
         [Option('u', "update",
                 HelpText = "Update balance snapshots from an exchange (or all exchanges).",

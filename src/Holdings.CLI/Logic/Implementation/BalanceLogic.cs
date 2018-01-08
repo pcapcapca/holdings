@@ -1,19 +1,33 @@
-﻿using Holdings.CLI.Options;
+﻿using Holdings.Balances.Queries.GetBalances;
+using Holdings.CLI.Options;
+using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
 namespace Holdings.CLI.Logic.Implementation
 {
-    class BalanceLogic : IApplicationLogic<BalanceOptions>
+    public class BalanceLogic : IApplicationLogic<BalanceOptions>
     {
-        public BalanceLogic()
+        private readonly IQueryHandler<GetBalancesQuery, BalancesResult> handler;
+
+        public BalanceLogic(IQueryHandler<GetBalancesQuery, BalancesResult> handler)
         {
+            if (handler == null)
+                throw new ArgumentNullException(nameof(handler));
+
+            this.handler = handler;
         }
 
-        public Task<int> Run(BalanceOptions options)
+        public async Task<int> Run(BalanceOptions options)
         {
-            Console.WriteLine("HELLO BALANCE");
-            return Task.FromResult(0);
+            if (!string.IsNullOrEmpty(options.ListStore))
+            {
+                var balances = await handler.Handle(new GetBalancesQuery { Store = options.ListStore });
+                Console.WriteLine("Balances:");
+                Console.WriteLine(JsonConvert.SerializeObject(balances.Balances));
+            }
+
+            return 0;
         }
     }
 }

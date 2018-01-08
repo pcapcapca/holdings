@@ -16,7 +16,7 @@ namespace Holdings.Data
         public DbSet<FiatWithdrawal> FiatWithdrawals { get; set; }
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Store> Stores { get; set; }
-        public DbSet<Asset> Tokens { get; set; }
+        public DbSet<Asset> Assets { get; set; }
         public DbSet<Trade> Trades { get; set; }
     }
 }

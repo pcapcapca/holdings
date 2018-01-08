@@ -14,5 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiClients\Holdings.ApiClients.Binance\Holdings.ApiClients.Binance.csproj" />
+    <ProjectReference Include="..\Holdings\Holdings.csproj" />
   </ItemGroup>
 </Project>

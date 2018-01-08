@@ -9,12 +9,10 @@
     <ProjectReference Include="..\Holdings.Data\Holdings.Data.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Deposits\" />
-    <Folder Include="Deposits\Commands\" />
-    <Folder Include="Deposits\CommandHandlers\" />
-    <Folder Include="Commands\" />
-    <Folder Include="Trades\" />
-    <Folder Include="Trades\CommandHandlers\" />
-    <Folder Include="Trades\Commands\" />
+    <Folder Include="Balances\" />
+    <Folder Include="Balances\Queries\" />
+    <Folder Include="Balances\Queries\GetBalances\" />
+    <Folder Include="Balances\Commands\" />
+    <Folder Include="Balances\Commands\UpdateBalances\" />
   </ItemGroup>
 </Project>

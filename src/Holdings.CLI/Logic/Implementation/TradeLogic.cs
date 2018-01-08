@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Holdings.CLI.Logic.Implementation
 {
-    class TradeLogic : IApplicationLogic<TradeOptions>
+    public class TradeLogic : IApplicationLogic<TradeOptions>
     {
         public TradeLogic()
         {
