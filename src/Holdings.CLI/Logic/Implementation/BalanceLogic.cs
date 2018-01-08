@@ -1,5 +1,6 @@
-﻿using System;
-using Holdings.CLI.Options;
+﻿using Holdings.CLI.Options;
+using System;
+using System.Threading.Tasks;
 
 namespace Holdings.CLI.Logic.Implementation
 {
@@ -9,9 +10,10 @@ namespace Holdings.CLI.Logic.Implementation
         {
         }
 
-        public int Run(BalanceOptions options)
+        public Task<int> Run(BalanceOptions options)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("HELLO BALANCE");
+            return Task.FromResult(0);
         }
     }
 }

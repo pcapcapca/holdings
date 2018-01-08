@@ -1,5 +1,6 @@
 ﻿using Holdings.CLI.Options;
 using System;
+using System.Threading.Tasks;
 
 namespace Holdings.CLI.Logic.Implementation
 {
@@ -9,9 +10,10 @@ namespace Holdings.CLI.Logic.Implementation
         {
         }
 
-        public int Run(TradeOptions options)
+        public Task<int> Run(TradeOptions options)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("HELLO TRADE");
+            return Task.FromResult(0);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Holdings.CLI.Logic;
+using Holdings.CLI.Logic.Implementation;
+using Holdings.CLI.Options;
 using StructureMap;
 
 namespace Holdings.CLI.Configuration
@@ -7,11 +9,8 @@ namespace Holdings.CLI.Configuration
     {
         public CLIRegistry()
         {
-            Scan(scanner => 
-            {
-                scanner.TheCallingAssembly();
-                scanner.ConnectImplementationsToTypesClosing(typeof(IApplicationLogic<>));
-            });
+            For<IApplicationLogic<BalanceOptions>>().Use<BalanceLogic>();
+            For<IApplicationLogic<TradeOptions>>().Use<TradeLogic>();
         }
     }
 }

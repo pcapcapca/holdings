@@ -1,7 +1,9 @@
-﻿namespace Holdings.CLI.Logic
+﻿using System.Threading.Tasks;
+
+namespace Holdings.CLI.Logic
 {
     interface IApplicationLogic<TOptions>
     {
-        int Run(TOptions options);
+        Task<int> Run(TOptions options);
     }
 }
