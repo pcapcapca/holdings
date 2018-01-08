@@ -7,12 +7,13 @@ namespace Holdings.CLI.Options
     class BalanceOptions
     {
         [Option('s', "summary",
-                HelpText = "Display a summary of your balances.")]
+                HelpText = "Display a summary of your balances.",
+                SetName = nameof(BalanceOptions))]
         public bool Summary { get; set; }
 
         [Option('u', "update",
-                HelpText = "Update balance snapshots from an exchange. (All exchanges if no value is provided)",
-                Default = "all")]
+                HelpText = "Update balance snapshots from an exchange (or all exchanges).",
+                SetName = nameof(BalanceOptions))]
         public string UpdateExchange { get; set; }
     }
 }

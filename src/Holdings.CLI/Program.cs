@@ -1,12 +1,10 @@
-﻿using CommandLine;
-using System;
-using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
-using Holdings.ApiClients.Binance.Services;
-using Holdings.StructureMap.Registries;
-using Newtonsoft.Json;
-using StructureMap;
+using CommandLine;
+using Holdings.CLI.Configuration;
 using Holdings.CLI.Options;
+using Holdings.StructureMap.Registries;
+using StructureMap;
 
 namespace Holdings.CLI
 {
@@ -14,42 +12,26 @@ namespace Holdings.CLI
     {
         static async Task<int> Main(string[] args)
         {
-            Console.WriteLine(string.Join(", ", args));
+            IContainer container = ContainerConfiguration.Configure();
+
+            Console.WriteLine(container.WhatDidIScan());
+            Console.WriteLine(container.WhatDoIHave());
+
+            //var opts = Parser.Default.ParseArguments<BalanceOptions, TradeOptions>(args)
+            //.MapResult();
+
+
+            return 1;
+
+            /*
+            IContainer container = new Container(new BinanceApiRegistry());
 
             return await Parser.Default.ParseArguments<BalanceOptions, TradeOptions>(args)
                 .MapResult(
                     (BalanceOptions opts) => Balance(opts),
                     (TradeOptions opts) => Trade(opts),
                     err => Task.FromResult(1));
-
-            /*
-
-
-
-            var options = Parser.Default.ParseArguments<Options>(args);
-            Console.WriteLine($"args: {string.Join(", ", args)}");
-            Console.WriteLine(JsonConvert.SerializeObject(options, Formatting.Indented));
-            return 0;
-
-
-            Container container = new Container(new BinanceApiRegistry());
-
-            try
-            {
-                IBalanceService svc = container.GetInstance<IBalanceService>();
-
-                await svc.CompareTime();
-
-                var balances = await svc.GetAccountBalances();
-                string serialized = JsonConvert.SerializeObject(balances.Where(b => b.Free > 0).ToList(), Formatting.Indented);
-                Console.WriteLine(serialized);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("An exception occurred");
-                Console.WriteLine(e.Message);
-            }
-            */
+                    */
         }
 
         static async Task<int> Balance(BalanceOptions opts)

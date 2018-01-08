@@ -20,5 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Options\" />
+    <Folder Include="Logic\" />
+    <Folder Include="Logic\Implementation\" />
+    <Folder Include="Configuration\" />
   </ItemGroup>
 </Project>
