@@ -4,13 +4,16 @@ using Binance.Account;
 using Binance.Api;
 using System;
 
+using Microsoft.Extensions.Configuration;
+
 namespace Holdings.ApiClients.Binance.Services.Implementation
 {
     public class BalanceService : IBalanceService
     {
         private readonly IBinanceApi api;
+        
 
-        public BalanceService(IBinanceApi api)
+        public BalanceService(IBinanceApi api, IConfiguration configuration)
         {
             this.api = api;
         }
