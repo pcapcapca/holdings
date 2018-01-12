@@ -5,13 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace Holdings.Balances.Queries.GetBalances
+namespace Holdings.Balances.Queries.GetBalanceSnapshot
 {
-    public class GetBalancesQueryHandler : IQueryHandler<GetBalancesQuery, BalancesResult>
+    public class GetLatestBalanceSnapshotQueryHandler : IQueryHandler<GetLatestBalanceSnapshotQuery, Balance>
     {
         private readonly HoldingsContext context;
 
-        public GetBalancesQueryHandler(HoldingsContext context)
+        public GetLatestBalanceSnapshotQueryHandler(HoldingsContext context)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
@@ -19,13 +19,13 @@ namespace Holdings.Balances.Queries.GetBalances
             this.context = context;
         }
 
-        public async Task<BalancesResult> Handle(GetBalancesQuery query)
+        public async Task<Balance> Handle(GetLatestBalanceSnapshotQuery query)
         {
-            List<Balance> balances = await context.BalanceSnapshots
+            List<AssetBalance> balances = await context.BalanceSnapshots
                 .GroupBy(b => b.Store.Name)
                 .Where(g => string.Equals(g.Key, query.Store, StringComparison.InvariantCultureIgnoreCase))
                 .Select(g => g.OrderByDescending(b => b.Timestamp).First())
-                .Select(b => new Balance
+                .Select(b => new AssetBalance
                 {
                     Asset = b.Asset.Symbol,
                     Store = b.Store.Name,
@@ -33,7 +33,7 @@ namespace Holdings.Balances.Queries.GetBalances
                 })
                 .ToListAsync();
 
-            return new BalancesResult { Balances = balances };
+            return new Balance { AssetBalance = balances };
         }
     }
 }

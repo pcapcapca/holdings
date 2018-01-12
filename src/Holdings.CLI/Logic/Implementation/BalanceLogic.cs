@@ -1,4 +1,4 @@
-﻿using Holdings.Balances.Queries.GetBalances;
+﻿using Holdings.Balances.Queries.GetBalanceSnapshot;
 using Holdings.CLI.Options;
 using Newtonsoft.Json;
 using System;
@@ -8,9 +8,9 @@ namespace Holdings.CLI.Logic.Implementation
 {
     public class BalanceLogic : IApplicationLogic<BalanceOptions>
     {
-        private readonly IQueryHandler<GetBalancesQuery, BalancesResult> handler;
+        private readonly IQueryHandler<GetLatestBalanceSnapshotQuery, Balance> handler;
 
-        public BalanceLogic(IQueryHandler<GetBalancesQuery, BalancesResult> handler)
+        public BalanceLogic(IQueryHandler<GetLatestBalanceSnapshotQuery, Balance> handler)
         {
             if (handler == null)
                 throw new ArgumentNullException(nameof(handler));
@@ -22,9 +22,9 @@ namespace Holdings.CLI.Logic.Implementation
         {
             if (!string.IsNullOrEmpty(options.ListStore))
             {
-                var balances = await handler.Handle(new GetBalancesQuery { Store = options.ListStore });
+                var balances = await handler.Handle(new GetLatestBalanceSnapshotQuery { Store = options.ListStore });
                 Console.WriteLine("Balances:");
-                Console.WriteLine(JsonConvert.SerializeObject(balances.Balances));
+                Console.WriteLine(JsonConvert.SerializeObject(balances.AssetBalance));
             }
 
             return 0;

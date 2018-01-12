@@ -1,6 +1,6 @@
-﻿namespace Holdings.Balances.Queries.GetBalances
+﻿namespace Holdings.Balances.Queries
 {
-    public class Balance
+    public class AssetBalance
     {
         public string Asset { get; set; }
         public string Store { get; set; }

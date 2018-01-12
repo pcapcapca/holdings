@@ -9,9 +9,6 @@
     <ProjectReference Include="..\Holdings.Data\Holdings.Data.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Balances\" />
-    <Folder Include="Balances\Queries\" />
-    <Folder Include="Balances\Queries\GetBalances\" />
     <Folder Include="Balances\Commands\" />
     <Folder Include="Balances\Commands\UpdateBalances\" />
   </ItemGroup>
