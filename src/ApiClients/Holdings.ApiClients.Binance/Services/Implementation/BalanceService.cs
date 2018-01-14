@@ -3,27 +3,26 @@ using System.Collections.Generic;
 using Binance.Account;
 using Binance.Api;
 using System;
-
-using Microsoft.Extensions.Configuration;
+using Holdings.ApiClients.Binance.Configuration;
 
 namespace Holdings.ApiClients.Binance.Services.Implementation
 {
     public class BalanceService : IBalanceService
     {
         private readonly IBinanceApi api;
-        
+        private readonly BinanceApiConfiguration configuration;
 
-        public BalanceService(IBinanceApi api, IConfiguration configuration)
+        public BalanceService(IBinanceApi api, BinanceApiConfiguration configuration)
         {
             this.api = api;
+            this.configuration = configuration;
         }
 
         public async Task<IEnumerable<AccountBalance>> GetAccountBalances()
         {
-            using (var apiUser = new BinanceApiUser("key", "secret"))
+            using (var apiUser = new BinanceApiUser(configuration.Key, configuration.Secret))
             {
                 AccountInfo accountInfo = await api.GetAccountInfoAsync(apiUser);
-
                 return accountInfo.Balances;
             }
         }

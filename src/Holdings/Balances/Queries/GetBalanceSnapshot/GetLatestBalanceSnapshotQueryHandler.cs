@@ -33,7 +33,7 @@ namespace Holdings.Balances.Queries.GetBalanceSnapshot
                 })
                 .ToListAsync();
 
-            return new Balance { AssetBalance = balances };
+            return new Balance { AssetBalances = balances };
         }
     }
 }

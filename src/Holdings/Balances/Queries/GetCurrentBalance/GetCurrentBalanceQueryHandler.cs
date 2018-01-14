@@ -21,10 +21,11 @@ namespace Holdings.Balances.Queries.GetCurrentBalance
             IEnumerable<AccountBalance> accountBalances = await service.GetAccountBalances();
 
             List<AssetBalance> balances = accountBalances
+                .Where(ab => ab.Free > 0)
                 .Select(ab => new AssetBalance { Asset = ab.Asset, Value = ab.Free, Store = "binance" })
                 .ToList();
 
-            return new Balance { AssetBalance = balances };
+            return new Balance { AssetBalances = balances };
         }
     }
 }

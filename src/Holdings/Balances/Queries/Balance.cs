@@ -4,6 +4,6 @@ namespace Holdings.Balances.Queries
 {
     public class Balance
     {
-        public IEnumerable<AssetBalance> AssetBalance { get; set; }
+        public IEnumerable<AssetBalance> AssetBalances { get; set; }
     }
 }
